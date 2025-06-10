@@ -12,9 +12,9 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::all();
+        $books = Book::filter($request->all())->simplePaginate(5);
         return BookResource::collection($books);
     }
 

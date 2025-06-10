@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-
+use EloquentFilter\Filterable;
 class Book extends Model implements HasMedia
 {
-    use InteractsWithMedia, HasFactory;
+    use Filterable, InteractsWithMedia, HasFactory;
     public $fillable = ['name', 'catalog_book_id', 'author_id', 'publishing_id', 'ibsn', 'status', 'year', 'user_id', 'description','language', 'image'];
     public function author(){
         return $this->belongsTo(BookAuthor::class, 'author_id');
