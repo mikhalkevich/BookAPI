@@ -12,7 +12,8 @@
 BookAPI work with next modules:
 - ModelFilter.
 - laravel-medialibrary.
-- Socialite... 
+- Socialite
+- Route-list
 
 
 ## Use Postman for test
